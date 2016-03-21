@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Canvasshapes by guerratron</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-dark.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/main.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+
+      <header>
+        <h1>Canvasshapes</h1>
+        <p>Library of creation, manipulation and calculation of flat geometric shapes.</p>
+      </header>
+
+      <div id="banner">
+        <span id="logo"></span>
+
+        <a href="https://github.com/guerratron/canvasShapes" class="button fork"><strong>View On GitHub</strong></a>
+        <div class="downloads">
+          <span>Downloads:</span>
+          <ul>
+            <li><a href="https://github.com/guerratron/canvasShapes/zipball/master" class="button">ZIP</a></li>
+            <li><a href="https://github.com/guerratron/canvasShapes/tarball/master" class="button">TAR</a></li>
+          </ul>
+        </div>
+      </div><!-- end banner -->
+
+    <div class="wrapper">
+      <nav>
+        <ul></ul>
+      </nav>
+      <section>
+        <blockquote>
+<hr>
+
+<p>'canvasShapes' (namespace) - Library of creation, manipulation and calculation of flat geometric shapes.<br>
+  Library: 'PolyArea'.<br>
+  Author: Juan José Guerra Haba - <a href="mailto:dinertron@gmail.com">dinertron@gmail.com</a> - Marzo de 2016<br>
+  License: Free BSD. &amp; Open GPL v.3. Keep credit, please.<br>
+  Versión: 0.9.0 BETA<br>
+  File: canvasShapes.js               Main Class: PolyArea.js  </p>
+
+<hr>
+</blockquote>
+
+<h1>
+<a id="canvasshapes" class="anchor" href="#canvasshapes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>canvasShapes</h1>
+
+<p>It is a library for drawing geometric figures associated events. </p>
+
+<p>It shows geometric calculations (areas, perimeters, ...) and supports a free drawn mode <em>"freehand"</em>; also it has a 
+ graphical interface with buttons bar and an options window where display / modify some of the multiple parameters supported. </p>
+
+<p><em>'CANVAS-SHAPES'</em> is actually a namespace that hold the library <strong>'PolyArea'</strong> which is responsible for the bulk of drawn figures, 
+ but also houses objects and methods useful in separate modules.<br>
+ HTML element works on a <em>'canvas'</em> that constructs itself and on which it has implemented a reception event for the creation and 
+ modified the figures (points, segments, ...)</p>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>After loading the file in the <em>'head'</em> zone (<code>&lt;script src = "... / canvasShapes.js" ...&gt; &lt;/ script&gt;</code>) you can start to use the library under the namespace: <em>'canvasShapes'</em>. It could commence for example, with the viewing of the UI by the method:</p>
+
+<pre><code>canvasShapes.render( {id: "idElement"} );
+</code></pre>
+
+<p>where the string <em>'idElement'</em> is expected that identifies the container element, that is, the element
+in which all imbibing <em>UI</em>.<br>
+From here everything is done visually and interactively in the <strong>GUI</strong>.</p>
+
+<h2>
+<a id="features" class="anchor" href="#features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features:</h2>
+
+<ul>
+<li>OOP Philosophy, classes, inheritance, modularity, abstraction, ...</li>
+<li>
+<em>ECMASCRIPT</em> 6 features: <code>"use-strict"</code>.</li>
+<li>Cross-Browser.</li>
+<li>Modularity and abstraction by js-modules and Closures.</li>
+<li>Grouping of modules in a single file to simplify the call in the <em>'head'</em>.</li>
+<li>Self-content CSS, <em>media-queries</em>, <em>'bootstrap'</em> patterns.</li>
+<li>
+<em>OUTSTANDING !!</em> : Assigning events to the figures in the <em>'canvas'</em>.<br>
+This is really <strong>INNOVATIVE</strong> and that everyone knows that drawn on a canvas does not allow events, since 
+they are not objects, but the library does implement recognizing the figures drawn as objects.</li>
+</ul>
+
+<h2>
+<a id="developing" class="anchor" href="#developing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Developing</h2>
+
+<p>Developed by <a href="mailto://dinertron@gmail.com" title="author">GuerraTron</a> <a href="https://github.com/2016" class="user-mention">@2016</a></p>
+
+<h3>
+<a id="tools" class="anchor" href="#tools" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Tools</h3>
+
+<p>Notepad ++  </p>
+
+<p>Created with <a href="https://github.com/Nodeclipse/nodeclipse-1">Nodeclipse</a>
+ (<a href="http://marketplace.eclipse.org/content/nodeclipse">Eclipse Marketplace</a>, <a href="http://www.nodeclipse.org">site</a>) 
+Nodeclipse is free open-source project that grows with your contributions.</p>
+
+<h3>
+<a id="author" class="anchor" href="#author" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Author:</h3>
+
+<p>I hope it can be useful to someone as it has been for me. In this case it would be appreciated email commenting 
+ use or suggestions for future improvements.  <br>
+     ¡ KEEP CREDITS, PLEASE !</p>
+      </section>
+      <footer>
+        <p>Project maintained by <a href="https://github.com/guerratron">guerratron</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
