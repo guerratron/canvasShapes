@@ -1,0 +1,5 @@
+{ "name" : "canvaShapes/canvasShapes-es",
+  "version" : "1.0.0",
+  "description" : "Librería de dibujado de figuras geométricas",
+  "main" : "canvaShapes-All.js"
+}

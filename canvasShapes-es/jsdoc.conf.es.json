@@ -1,0 +1,45 @@
+{
+    "package": { "name" : "canvasShapes/canvasShapes-es",
+      "version" : "1.0.0",
+      "description" : "Librería de dibujado de figuras geométricas",
+      "main" : "canvasShapes-All.es.js"
+    },
+    "tags": {
+        "allowUnknownTags": true,
+        "dictionaries": ["jsdoc","closure"]
+    },
+    "source": {
+        "include": [ "canvasShapes-All.es.js" ],
+        "exclude": ["./static/*.*", 
+										"./help/*.*",
+                     "./doc/*.*",
+										 "./img/*.*",
+										 "./examples/*.*",
+                     "./tutorial/*.*"],
+        "includePattern": ".+\\.js(doc)?$",
+        "excludePattern": "(^|\\/|\\\\)_"
+    },
+    "plugins": ["plugins/markdown",
+                "plugins/summarize"],
+    "templates": {
+        "logoFile": "img/canvasShapes-logo.png",
+				"dateFormat": "ddd MMM Do YYYY",
+				"systemName": "canvasShapes :: PolyArea - by GUERRATRON",
+				"cleverLinks": false,
+        "monospaceLinks": true,
+        "default": {
+          "staticFiles": {
+            "include": [
+                "./static"
+            ]
+          }
+        }
+    },
+    "opts": {
+        "encoding": "utf8",
+        "destination": "./doc/",
+        "recurse": true,
+        "tutorials": "./tutorial",
+        "readme": "./help/LEEME.md"
+    }
+}

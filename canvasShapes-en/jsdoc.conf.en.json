@@ -1,0 +1,46 @@
+{
+    "package": {
+      "name" : "canvasShapes/canvasShapes-en",
+      "version" : "1.0.0",
+      "description" : "Library drawing geometric figures",
+      "main" : "canvasShapes-All.js"
+    },
+    "tags": {
+        "allowUnknownTags": true,
+        "dictionaries": ["jsdoc","closure"]
+    },
+    "source": {
+        "include": [ "canvasShapes-All.en.js" ],
+        "exclude": ["./static/*.*",
+                    "./help/*.*",
+                     "./doc/*.*",
+                     "./img/*.*",
+                     "./examples/*.*",
+                     "./tutorial/*.*"],
+        "includePattern": ".+\\.js(doc)?$",
+        "excludePattern": "(^|\\/|\\\\)_"
+    },
+    "plugins": ["plugins/markdown",
+                "plugins/summarize"],
+    "templates": {
+        "logoFile": "img/canvasShapes-logo.png",
+        "dateFormat": "ddd MMM Do YYYY",
+        "systemName": "canvasShapes :: PolyArea - by GUERRATRON",
+        "cleverLinks": false,
+        "monospaceLinks": true,
+        "default": {
+          "staticFiles": {
+            "include": [
+                "./static"
+            ]
+          }
+        }
+    },
+    "opts": {
+        "encoding": "utf8",
+        "destination": "./doc/",
+        "recurse": true,
+        "tutorials": "./tutorial",
+        "readme": "./help/README.md"
+    }
+}

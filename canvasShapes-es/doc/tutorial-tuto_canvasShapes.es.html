@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Tutorial: Tutorial canvasShapes</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Tutorial: Tutorial canvasShapes</h1>
+
+    <section>
+
+<header>
+    
+
+    <h2>Tutorial canvasShapes</h2>
+</header>
+
+<article>
+    <!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Tutorial canvasShapes - PolyArea - Dibujado de formas geométricas en el canvas - by Juanjo Guerra Haba" />
+    <title>Tutorial 'Canvas-Shapes' - by GuerraTron</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link href="./css/tuto.css" media="screen" rel="stylesheet" type="text/css" />
+  </head>
+  
+  <body>
+
+    <div id="divTotal"><!-- BEGIN:: TOTAL DIV -->
+    
+      <header>
+        <span>canvasShapes</span> <sub>POLYAREA v1.0.0</sub>
+        <p class="clearfix"></p>
+        <img src="img/canvasShapes-logo.png" alt="logo canvasShapes" title="canvasShapes" />
+        <blockquote>
+          Librería de creación, manipulado y cálculo de figuras geométricas planas.<br />
+          Con esta librería pueden crearse objetos PolyArea que viene a ser un conglomerado de figuras geométricas agrupadas como Puntos, Segmentos y Polígonos. 
+          <blockquote>
+            <cite><small>canvasShapes - PolyArea v1.0.0<br />
+            <address>copyright @ 2015 - Juan José Guerra Haba &lt;dinertron@gmail.com&gt; <img id="torotron" src="img/torotron_logo.png" alt="torotron" title="author" /></address>
+            License: Free. GPL.v3</small></cite>
+          </blockquote>
+        </blockquote>
+        <p class="clearfix"></p>
+      </header>
+      
+      <div id="container"><!-- BEGIN:: CONTAINER DIV -->
+        <h1>Tutorial canvasShapes</h1>
+        <nav>
+					<span class="caption">ÍNDICE:</span>
+					<ul id="TOC">
+						<li><a href="#intro" title="introducción">Introducción</a></li>
+						<li><a href="#cargarScript" title="cargar el script">Carga</a></li>
+						<li><a href="#opciones" title="objeto Javascript">Opciones</a></li>
+						<li><a href="#GUI" title="Interfaz Gráfica">GUI</a></li>
+						<li><a href="#botonera" title="botones de la UI">Botonera</a></li>
+						<li><a href="#coordenadas" title="coordenadas cartesianas">Coordenadas</a></li>
+					</ul>
+					<br class="clearfix" />
+					
+					<!--<datalist id="browsers">
+						<option value="Internet Explorer">
+						<option value="Firefox">
+						<option value="Chrome">
+						<option value="Opera">
+						<option value="Safari">
+					</datalist>
+					<input list="browsers" />-->
+				</nav>
+				<div id="intro" name="intro" class="intro">
+          <h3>Introducción:</h3>
+					<div>
+						<p>Teniendo en cuenta que el elemento <b>canvas</b> de HTML5 es puro 'dibujo de mapa de bits', no pueden interpretarse los elementos de dibujado como objetos.</p>
+						<p>Esto es el gran logro de <b>canvasShapes</b>: Convertir e interpretar los elementos dibujados en el canvas como objetos, pudiendo así aumentar su manejabilidad y asignarles eventos, permitiendo una interactividad con el usuario no lograda con un simple 'canvas HTML'.</p>
+						<p class="PD">Por supuesto todo esto tiene penalización en cuanto al consumo de memoria, pero es asumible en dibujos con no más de unos cientos de objetos.</p>
+					</div>
+          <p>Una vez que se familiariza con la <b>GUI</b> se dará cuenta que <b>canvasShapes</b> puede utilizarse para multitud de usos, desde dibujos de simples figuras geométricas hasta algo más elaborado como un sencillo plano o un simple esquema.<br />
+					Incluso empleando algo de imaginación, podría ser una buena plataforma para lo que se conoce como '<i>Arte cartesiano</i>', que es algo que me ha llamado mucho la atención desde hace tiempo y que pueden encontrarse ejemplos incluso en la 'wikipedia'.</p>
+					<p class="PD">Como colofón diré que <b>canvasShapes</b> puede emplearse en todo lo que sea una <b>representación cartesiana</b> de un objeto</p>
+        </div>
+
+        <div id="cargarScript" name="cargarScript">
+          <h3>Cargar el Script:</h3>
+					<p>Por supuesto el primer paso empieza por cargar el script en la zona <b>Head</b> de la página, por ejemplo:<br />
+              <code class="html">
+                <span>&emsp;&lt;<i class="meth">script</i> type=<i class="txt">"text/javascript"</i> src=<i class="txt">"canvasShapes.js"</i>&gt; &lt;/<i class="meth">script</i>&gt;</span>
+              </code>
+          </p>
+					<p>El script crea un <abbr title="espacio de nombres">namespace</abbr> GLOBAL <b>canvasShapes</b>; es la única variable global creada, todas los demás objetos, variables, funciones y métodos utilizados cuelgan de ella, impidiendo así contaminar el espacio global.</p>
+					<p>La librería implementa una completa <abbr title="Intefaz Gráfica de Usuario">GUI</abbr>, y lo único que necesitamos para crearla es llamar a su método <b>render( ... )</b></p>
+					<p>Podemos escribir código (en una etiqueta <i>&lt;script&gt;</i>) para crear la interfaz gráfica pasándole unos parámetros de inicialización, en formato <b>objeto Javascript</b>: 
+					<code class="html">
+						<span><i class="comment">//la propiedad 'id' se corresponderá con el id de algún elemento contenedor donde ubicar el canvas de dibujo</i></span>
+						<span>var <i class="obj">obj</i> = { <i class="prop">id</i>:<i class="txt">"canvas1"</i>, <i class="prop">language</i>:<i class="txt">"es-ES"</i> }</span>
+						<span>var <i class="var">pol</i> = <i class="ns">canvasShapes</i>.<i class="meth">render</i>( <i class="obj">obj</i> );</span>
+						<span><i class="comment">//ahora la variable 'pol' hace referencia al objeto 'PolyArea' creado</i></span>
+						<span><i title="más código ...">...</i></span>
+					</code>
+					<details>
+						<summary>Opcional: </summary>
+						Este método retorna un objeto 'PolyArea' que podemos capturar, si así lo necesitamos, y modificar para tener un control total de la librería.
+						<span class="PD">Aunque en principio no sería necesario porque en la propia interfaz gráfica tenemos los medios para construir y modificar todo tipo de figuras.</span>
+					</details>
+        </div>
+
+        <div id="opciones" name="opciones">
+          <h3>Opciones:</h3>
+          <p>Como ya se ha dicho, el método <b>canvasShapes.render( obj )</b> admite un objeto con multitud de opciones para la inicialización de toda la <abbr title="Interfaz de Usuario">UI</abbr>. A continuación se proporciona un listado de <i class="resaltar" title="para una lista más exhaustiva observar el código fuente">casi la totalidad</i> de ellas:</p>
+          <ul>
+            <li><b>id</b>: [string] Representa generalmente al Id del elemento contenedor de toda la interfaz gráfica para PolyArea. También puede ser el ID de un canvas existente para poder embeberlo y manejarlo.</li>
+            <li><b>language</b>: [string, DEFAULT: "en-GB"] Idioma para la interfaz gráfica. Por defecto Inglés.</li>
+            <li><b>canvas</b>: [HTMLCanvasElement] Objeto de dibujado Canvas. Normálmente se generará automáticamente.</li>
+						<li><b>container</b>: [HTMLElement] Viene a ser el elemento contenedor de toda la interfaz gráfica PolyArea.</li>
+            <li><b>OPCIONES UI: showTitle, showSubTitle, showCredits</b>: [boolean, DEFAULT: true] Indican si mostrar respectívamente el título, subtítulo y créditos en la UI.<br />
+						Se agradecería que se permitan visualizar los créditos de alguna forma a modo de reconocimiento.</li>
+						<li><b>BLOQUES: polyAreaHeader, showBody, polyAreaFooter</b>: [boolean, DEFAULT: true] Especifican si mostrar respectívamente las zonas de cabecera, cuerpo y pié en la UI. Contienen básicamente:<br />
+						 - 'polyAreaHeader': título y subtítulo.<br />
+						 - 'showBody': botonera de menú, campos de acciones e información útil.<br />
+						 - 'polyAreaFooter': contiene básicamente los créditos.</li>
+            <li><b>canvasDataTitle, canvasDataInfo, canvasDataIntro, canvasDataOptions, canvasDataButtons</b>: [boolean, DEFAULT: true] Indican otras subzonas de la UI, por ejemplo 'canvasDataIntro' contiene la zona de coordenadas e introducción de datos.</li>
+						<li><b>BOTONES: showUIButtons, btnCanvasFlag, btnCanvasRedraw, btnCanvasZoom, btnCanvasOptions, btnDownCanvasImage, btnCanvasClean, btnCanvasReset</b>: [boolean, DEFAULT: true] Representan botones de acción de la UI, por ejemplo 'btnDownCanvasImage' permite descargar el canvas de dibujo como una imágen PNG.</li>
+						<li><b>EVENTOS: mousePoints, mouseInfo, mouseDrop</b>: [boolean, DEFAULT: true] Representan todas ellas eventos del ratón que permiten insertar puntos, obtener información al posar el cursor del ratón sobre ellos e incluso arrastrarlos por el canvas para cambiarlos de posición.</li>
+						<li><b>A MANO ALZADA: freeDraw, freeDrawSize, freeDrawColor, freeDrawRounded</b> [mixture] Permiten y administran el modo de DIBUJO LIBRE. Son respectivamente de tipo 'boolean', 'numeric', 'string' y 'boolean'.</li>
+						<li><b>GENÉRICAS: grid, axes, canvasWidth, canvasHeight, autoProportion, decimals, fill, gradient, showNames, canvasSquared</b>: Representan botones de acción de la UI<br />
+						Aunque la mayoría son de tipo 'boolean', algunas como por ejemplo 'decimals' o 'canvasWidth' son numéricas, incluso las hay de tipo 'object' como 'gradient' que representa un objeto para el relleno de las figuras y se construye con el método 'createLinearGradient(...)' del contexto del canvas.</li>
+						<li><b>OTRAS: cleanAllIfEmpty, fractionGrid, deformation, proportionX/Y, invertX/Y, zoomIn/Out, coordinatesCentred, ... </b> ... y alguna más</li>
+					</ul>
+          
+          <p>Aunque de todas ellas la única imprescindible en realidad sería 'id'.</p>
+          <p class="alert">Aunque se ha realizado un esfuerzo para que la librería sea <b>cross-browser</b>, dependiendo de los valores de ciertas opciones puede observarse alguna diferencia dependiendo del navegador utilizado.</p>
+        </div>
+
+        <div id="GUI" name="GUI">
+          <h3>GUI:</h3>
+          <p>La interfaz gráfica se autoconstruye y se embebe en el elemento con el 'id' pasado como parámetro. Todo el código que necesita (javascript, css, html) se encuentra definido en un módulo de la librería llamado '<i>canvasShapes.UI.js</i>', éste se encarga de mostrar las diferentes ZONAS de la interfaz, donde podemos observar las siguientes:</p>
+            <img src="./img/zonesGUI.png" alt="GUI zones" title="zonas GUI" style="max-width:100%;" />
+					<p>A través del botón de Opciones <i class="button26 btnOptions" title="botón opciones">&nbsp;</i> accedemos a esa zona donde podemos modificar multitud de parámetros, algunos afectan a las figuras representadas, otros al canvas. También podemos introducir o modificar los datos de coordenadas diréctamente en formato 'texto'. (se explica más detalladamente en la sección de <a href="#coordenadas" title="coordenadas cartesianas">Coordenadas</a>)</p>
+					<p>Estos parámetros representan a algunas de las propiedades de la sección anterior (<a href="#opciones" title="opciones">Opciones</a>) pero de forma visual. La tabla de correspondencia es la siguiente:</p>
+					<table>
+						<thead>
+							<tr>
+								<th class="title">Grupo</th> <th>Ico/Prop</th> <th>Ico/Prop</th> <th>Ico/Prop</th> <th>Ico/Prop</th> <th>Ico/Prop</th>
+							</tr>
+						</thead>
+						<tfoot>
+						</tfoot>
+						<tbody>
+							<tr>
+								<td class="title">CANVAS:</td>
+								<td><i class="param16 parGrid" title="rejillas">&nbsp;</i> grid</td> <td><i class="param16 parAxes" title="ejes">&nbsp;</i> axes</td>
+								<td><i class="param16 parFractionGrid" title="fracción de rejilla">&nbsp;</i> fractionGrid</td>
+								<td><i class="param16 parCanvasWidth" title="ancho del canvas">&nbsp;</i> canvasWidth</td> <td><i class="param16 parCanvasHeight" title="alto del canvas">&nbsp;</i> canvasHeight</td>
+							</tr>
+							<tr>
+								<td class="title">COORD.:</td>
+								<td><i class="param16 parAutoProportion" title="autoporporción">&nbsp;</i> autoProportion</td> 
+								<td><i class="param16 parProportionX" title="proporción para el eje X">&nbsp;</i> proportionX</td>	<td><i class="param16 parProportionY" title="proporción para el eje Y">&nbsp;</i> proportionY</td>
+								<td><i class="param16 parInvertX" title="inversión del eje X">&nbsp;</i> invertX</td> <td><i class="param16 parInvertY" title="inversión del eje Y">&nbsp;</i> invertY</td>
+							</tr>
+							<tr>
+								<td>&nbsp;</td>
+								<td><i class="param16 parDecimals" title="decimales">&nbsp;</i> decimals</td> <td><i class="param16 parZoomSize" title="incremento de zoom">&nbsp;</i> zoomSize</td>
+								<td><i class="param16 parMouseDrop" title="permite arrastrar">&nbsp;</i> mouseDrop</td> <td><i class="param16 parMouseInfo" title="muestra información sobre las figuras">&nbsp;</i> mouseInfo</td> <td><i class="param16 parMousePoints" title="permite insertar puntos con el cursor">&nbsp;</i> mousePoints</td>
+							</tr>
+							<tr>
+								<td class="title">OTRAS:</td>
+								<td><i class="param16 parShowNames" title="mostrar nombres">&nbsp;</i> showNames</td> <td><i class="param16 parFillColor" title="color de relleno">&nbsp;</i> fillColor</td>
+							</tr>
+							<tr>
+								<td class="title">FREEDRAW:</td>
+								<td><i class="param16 parFreeDraw" title="permite el dibujado a mano alzada">&nbsp;</i> freeDraw</td> <td><i class="param16 parFreeDrawRounded" title="tipo del trazo redondeado">&nbsp;</i> freeDrawRounded</td>
+								<td><i class="param16 parFreeDrawSize" title="tamaño del trazo">&nbsp;</i> freeDrawSize</td><td><i class="param16 parFreeDrawColor" title="color del trazo">&nbsp;</i> freeDrawColor</td>
+							</tr>
+						</tbody>
+					</table>
+					
+					<p>La zona más importante es el canvas (evidentemente), dónde podemos dibujar puntos diréctamente con el cursor del ratón, arrastrarlos a otra posición o crear segmentos arrastrando un punto sobre otro. También podemos seleccionar figuras de una en una, o seleccionar varias con la tecla <b>ctrl</b> pulsada.<br />
+					Para seleccionar un segmento se debe hacer 'click' sobre su punto central, y en los polígonos se debe buscar su PUNTO DE GRAVEDAD o <b>baricentro</b> que vendrá resaltado como un pequeño círculo.</p>
+				</div>
+        <div id="botonera" name="botonera">
+          <h3>Botonera:</h3>
+          <p>La mayoría de las acciones de importancia vienen representadas en forma de botones. Esta botonera se divide en dos partes: La principal que siempre se encuentra visible, y otra secundaria situada en la zona de opciones.</p>
+          <ul>
+            <li><b>PRINCIPAL</b>:
+							<ul>
+								<li><i class="button26 btnLanguage" title="botón idioma">&nbsp;</i> <b>Idioma</b>: Visualiza la bandera del idioma establecido. Actualmente no tiene asociada ninguna acción.</li>
+								<li><i class="button26 btnRefresh" title="botón actualizar">&nbsp;</i> <b>Actualizar</b>: Refresca o actualiza el dibujo, REDIBUJA.</li>
+								<li><i class="button26 btnZoomRestore" title="botón restaurar el zoom">&nbsp;</i> <b>Restaurar Zoom</b>: Restaura el zoom al estado original.</li>
+								<li><i class="button26 btnZoomIn" title="botón aumentar">&nbsp;</i> <b>Aumentar</b>: Aumenta el zoom al canvas.</li>
+								<li><i class="button26 btnZoomOut" title="botón reducir">&nbsp;</i> <b>Reducir</b>: Reduce el zoom al canvas.</li>
+								<li><i class="button26 btnOptions" title="botón opciones">&nbsp;</i> <b>Opciones</b>: Muestra u oculta la zona de opciones.</li>
+								<li><i class="button26 btnDownload" title="botón descargar">&nbsp;</i> <b>Descargar</b>: Descarga el canvas como imágen.</li>
+								<li><i class="button26 btnClean" title="botón limpiar">&nbsp;</i> <b>Limpiar</b>: Limpia el canvas, pero sin destruir las figuras creadas.</li>
+								<li><i class="button26 btnTrash" title="botón borrar">&nbsp;</i> <b>Borrar</b>: Limpia el canvas y DESTRUYE todas las figuras creadas.</li>
+							</ul>
+						</li>
+            <li><b>SECUNDARIA</b>: (zona opciones)
+							<ul>
+								<li><i class="button26 btnCoordinates" title="botón coordenadas">&nbsp;</i> <b>Coordenadas</b>: Muestra u oculta la zona de introducción de coordenadas.</li>
+								<li><i class="button26 btnGrouped" title="botón agrupar">&nbsp;</i> <b>Agrupar</b>: Agrupa todas las figuras seleccionadas en un único polígono.</li>
+								<li><i class="button26 btnSelected" title="botón seleccionar">&nbsp;</i> <b>Seleccionar</b>: Selecciona todas las figuras creadas.</li>
+							</ul>
+						</li>
+          </ul>
+        </div>
+				
+				<div id="coordenadas" name="coordenadas">
+          <h3>Coordenadas:</h3>
+					<p>Todas las formas dibujadas se interpretan como <i>figuras geométricas</i>, lo que implica que se representan como un conjunto de <b>coordenadas en un plano cartesiano</b>. Esta es la forma matemática (geométrica) para trabajar con <b>puntos</b>, <b>segmentos</b> y <b>polígonos</b>, y así es como pueden visualizarse en el <b>eje de coordenadas</b>.<br />
+					Esta representación cartesiana de coordenadas queda registrada, aunque por defecto oculta, en la zona de <b>INTRO DATA</b>; si nos interesase visualizarla debemos pulsar el botón <i class="button26 btnCoordinates" title="botón coordenadas">&nbsp;</i> donde nos mostrará algo como esto:</p>
+					<img src="./img/zoneCoordinates.png" alt="Coordinates zones" title="zonas Coordenadas" style="max-width:45%; float:left;" />
+					<ul style="font-size: smaller; max-width:45%; float:right; margin:auto; padding:4px;">
+						<li>Coordenadas X:  representan todas las Xs de todas las figuras dibujadas en el canvas.</li>
+					  <li>Coordenadas Y:  representan todas las Ys de todas las figuras dibujadas en el canvas.</li>
+						<li>Coordenadas XY: representan todos los pares de coordenadas XYs agrupadas por polígonos creados.</li>
+					</ul>
+					<p class="clearfix">&nbsp;</p>
+				</div><!-- END:: COORDINATES DIV -->
+				
+				<div id="colofon" name="colofon">
+					<p class="alert">Solo resta animar al usuario a utilizar esta librería a la que seguro pueden dárseles mil y un usos. Para empezar se puede experimentar con los ejemplos propuestos para ir familiarizandose con ella.</p>
+				</div><!-- END:: COLOFÓN DIV -->
+			
+      </div><!-- END:: CONTAINER DIV -->
+
+      <div id="footer" name="footer">
+        <p><b>AUTOR</b> : Espero que pueda serle de utilidad a alguien como lo ha sido para mí. En tal caso se agradecería email comentando su uso o sugerencias para futuras mejoras. (<a href="mailto:dinertron@gmail.com">guerraTron</a>) <br />
+          <span style='color:#DDDDDD;'>¡ POR FAVOR, MANTENER CRÉDITOS Y ENLACES. GRACIAS !</span></p>
+        <p><i><span style='font-family:"Century Gothic","sans-serif"'>&nbsp;... Y COMO DIRÍA 'GEORGE LUCAS': ¡¡ QUE LA FUERZA OS ACOMPA&Ntilde;E. !!</span></i></p>
+      </div>
+
+    </div><!-- END:: TOTAL DIV -->
+
+		<script type="text/javascript">
+				//REUTILIZACIÓN DE NAMESPACE 'canvasShapes'
+				var canvasShapes;
+				(function(canvasShapes){
+					function formatCode(classArray){
+						if(classArray.pop){	//si es un array
+							classArray.forEach(function(c){
+									var codeObjs = document.getElementsByClassName(c);
+									for(var i=0; i<codeObjs.length; i++){
+										var e = codeObjs[i];
+										if(e){ e.title = c; }
+									};
+							});
+						}
+					}
+					canvasShapes.formatCode = formatCode;
+				})(canvasShapes || (canvasShapes={}));
+				//UTILIDAD PARA FORMATEAR CÓDIGO DE ESTA PÁGINA, AHORRANDO UNAS CUANTAS LÍNEAS.
+				canvasShapes.formatCode(["var", "ns", "prop", "param", "func", "obj", "meth", "nfunc", "txt", "comment", "bool"]);
+		</script>
+  </body>
+</html>
+
+</article>
+
+</section>
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Tutorials</h3><ul><li><a href="tutorial-examples_canvasShapes.es.html">Ejemplos canvasShapes</a></li><li><a href="tutorial-tuto_canvasShapes.es.html">Tutorial canvasShapes</a></li></ul><h3>Global</h3><ul><li><a href="global.html#autoProportion">autoProportion</a></li><li><a href="global.html#axes">axes</a></li><li><a href="global.html#axesFront">axesFront</a></li><li><a href="global.html#btnCanvasClean">btnCanvasClean</a></li><li><a href="global.html#btnCanvasFlag">btnCanvasFlag</a></li><li><a href="global.html#btnCanvasOptions">btnCanvasOptions</a></li><li><a href="global.html#btnCanvasRedraw">btnCanvasRedraw</a></li><li><a href="global.html#btnCanvasReset">btnCanvasReset</a></li><li><a href="global.html#btnCanvasZoom">btnCanvasZoom</a></li><li><a href="global.html#btnDownCanvasImage">btnDownCanvasImage</a></li><li><a href="global.html#canvas">canvas</a></li><li><a href="global.html#canvasDataButtons">canvasDataButtons</a></li><li><a href="global.html#canvasDataInfo">canvasDataInfo</a></li><li><a href="global.html#canvasDataIntro">canvasDataIntro</a></li><li><a href="global.html#canvasDataOptions">canvasDataOptions</a></li><li><a href="global.html#canvasDataTitle">canvasDataTitle</a></li><li><a href="global.html#canvasHeight">canvasHeight</a></li><li><a href="global.html#canvasShapes">canvasShapes</a></li><li><a href="global.html#canvasSquared">canvasSquared</a></li><li><a href="global.html#canvasWidth">canvasWidth</a></li><li><a href="global.html#cleanAllIfEmpty">cleanAllIfEmpty</a></li><li><a href="global.html#container">container</a></li><li><a href="global.html#coordinatesCentred">coordinatesCentred</a></li><li><a href="global.html#ctx">ctx</a></li><li><a href="global.html#decimals">decimals</a></li><li><a href="global.html#deformation">deformation</a></li><li><a href="global.html#drawPoints">drawPoints</a></li><li><a href="global.html#drawPolygons">drawPolygons</a></li><li><a href="global.html#drawSegments">drawSegments</a></li><li><a href="global.html#equalProportion">equalProportion</a></li><li><a href="global.html#fill">fill</a></li><li><a href="global.html#fractionGrid">fractionGrid</a></li><li><a href="global.html#freeDraw">freeDraw</a></li><li><a href="global.html#freeDrawColor">freeDrawColor</a></li><li><a href="global.html#freeDrawRounded">freeDrawRounded</a></li><li><a href="global.html#freeDrawSize">freeDrawSize</a></li><li><a href="global.html#gradient">gradient</a></li><li><a href="global.html#grid">grid</a></li><li><a href="global.html#gridFront">gridFront</a></li><li><a href="global.html#id">id</a></li><li><a href="global.html#invertX">invertX</a></li><li><a href="global.html#invertY">invertY</a></li><li><a href="global.html#language">language</a></li><li><a href="global.html#linkDownCanvasImage">linkDownCanvasImage</a></li><li><a href="global.html#mouseDrop">mouseDrop</a></li><li><a href="global.html#mouseInfo">mouseInfo</a></li><li><a href="global.html#mousePoints">mousePoints</a></li><li><a href="global.html#original">original</a></li><li><a href="global.html#pointsDrawChildren">pointsDrawChildren</a></li><li><a href="global.html#polyAreaFooter">polyAreaFooter</a></li><li><a href="global.html#polyAreaHeader">polyAreaHeader</a></li><li><a href="global.html#polygonsDrawChildren">polygonsDrawChildren</a></li><li><a href="global.html#proportionX">proportionX</a></li><li><a href="global.html#proportionY">proportionY</a></li><li><a href="global.html#segmentsDrawChildren">segmentsDrawChildren</a></li><li><a href="global.html#showBody">showBody</a></li><li><a href="global.html#showCredits">showCredits</a></li><li><a href="global.html#showNames">showNames</a></li><li><a href="global.html#showSubTitle">showSubTitle</a></li><li><a href="global.html#showTitle">showTitle</a></li><li><a href="global.html#showUIButtons">showUIButtons</a></li><li><a href="global.html#timestamp">timestamp</a></li><li><a href="global.html#zoomIn">zoomIn</a></li><li><a href="global.html#zoomOut">zoomOut</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Mon Mar 21 2016 20:53:52 GMT+0100 (Hora estándar romance)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

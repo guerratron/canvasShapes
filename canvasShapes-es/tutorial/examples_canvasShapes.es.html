@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+     <meta charset="UTF-8">
+     <title>Canvas Shapes con PolyArea: por Guerratron</title>
+      <!-- BEGIN CanvasShapes. CSS Auto-Contenido, no necesario implementarlo externamente.-->
+			<script src="js/canvasShapes-All.es.min.js" type="text/javascript"></script>
+  </head>
+  <body>
+      <button id="buttonLanzar" onclick="lanzar();">Lanzar</button>
+      <button id="buttonDibujar" onclick="dibujar();">Dibujar</button>
+      <div id="div1" style="background:lightGray; border:1px solid navy; border-radius:6px; margin:2px; padding:4px;">&nbsp;</div>
+      <div id="div2" style="background:lightBlue; border:1px solid navy; border-radius:6px; margin:2px; padding:4px;">&nbsp;</div>
+
+      <script type="text/javascript">
+        var poli=null;
+
+        function lanzar(){
+            poli=canvasShapes.render({id:"div2", language:"es-ES"});
+            var p=new canvasShapes.PolyArea.Point(poli);
+            p.setX(100);
+            p.setY(50);
+            poli.addPoint(p);
+            var p2=new canvasShapes.PolyArea.Point(poli);
+              p2.setX(-100);
+              p2.setY(50);
+              poli.addPoint(p2);
+              var p3=new canvasShapes.PolyArea.Point(poli);
+              p3.setX(20);
+              p3.setY(20);
+              poli.addPoint(p3);
+        }
+
+        function dibujar(){
+            poli.draw();
+            //var p= poli.getChildren().Points[1];
+            //p.draw();
+        }
+      </script>
+  </body>
+</html>

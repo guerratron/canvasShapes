@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Home</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Home</h1>
+
+    
+
+
+
+    
+
+
+    <h3> </h3>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    <section>
+        <article><blockquote>
+<hr>
+<p>  'canvasShapes' (namespace) - Librería de creación, manipulado y cálculo de figuras geométricas planas.<br>  Library: 'PolyArea'.<br>  Author: Juan José Guerra Haba - dinertron@gmail.com - Marzo de 2016<br>  License: Free BSD. &amp; Open GPL v.3. Mantener los créditos, por favor.<br>  Versión: 0.9.0 BETA<br>  File: canvasShapes.js               Main Class: PolyArea.js  </p>
+<hr>
+</blockquote>
+<h1>canvasShapes</h1><p> Es una librería para el dibujado de figuras geométricas con eventos asociados.</p>
+<p> Muestra cálculos geométricos (áreas, perímetros, ...) y admite un modo de dibujado
+libre &quot;a mano alzada&quot;; además presenta una interfaz gráfica con botonera de acciones 
+y una ventana de opciones dónde visualizar/modificar algunos de los múltiples parámetros
+que admite.</p>
+<p> <em>CANVAS-SHAPES</em> es en realidad un espacio de nombres que alberga la librería <strong>PolyArea</strong> 
+que es la encargada del grueso de dibujado de las figuras, aunque también alberga objetos 
+y métodos de utilidad en módulos separados.<br>Trabaja sobre un elemento HTML <em>canvas</em> que se autoconstruye y sobre el que se ha implementado
+una recepción de eventos para la creación y modificado de las figuras (puntos, segmentos, ...)</p>
+<h2>Uso</h2><p> Tras la carga del archivo en la zona <em>head</em> (<code>&lt;script src=&quot;.../canvasShapes.js&quot; ... &gt;&lt;/script&gt;</code>)
+puede empezar a utilizarse la librería bajo el namespace: <em>'canvasShapes'</em>. Podría por ejemplo 
+comenzarse con el visionado de la UI a través del método </p>
+<pre class="prettyprint source"><code>canvasShapes.render( {id: &quot;idElement&quot;} ); </code></pre><p>dónde la cadena <em>'idElement'</em> se espera que identifique al elemento contenedor, osea, el elemento 
+en el cual embeber toda la <em>UI</em>.<br> A partir de aquí ya todo se realiza de forma visual e interactiva en la <strong>GUI</strong>.</p>
+<h2>Características:</h2><ul>
+<li>Filosofía OOP, clases, herencia, modularidad, abstracción, ...</li>
+<li>Características <em>ECMASCRIPT</em> 6 como <code>&quot;use-strict&quot;</code>.</li>
+<li>Cross-Browser.</li>
+<li>Modularidad y Abstracción mediante módulos-js y Closures.</li>
+<li>Agrupación de módulos en un único archivo para simplificar la llamada de carga en el <em>'head'</em>.</li>
+<li>CSS auto-contenido, <em>media-queries</em>, patrones <em>'bootstrap'</em>.</li>
+<li><em>IMPORTANTE !!</em> : Asignación de eventos a las figuras en el <em>'canvas'</em>.<br>Esto es realmente <strong>NOVEDOSO</strong> ya que de todos es sabido que lo dibujado en un canvas no permite 
+eventos, puesto que no son objetos, pero la librería logra implementarlos reconociendo las figuras 
+dibujadas como objetos.</li>
+</ul>
+<h2>Desarrollo</h2><p>Desarrollado por <a href="mailto://dinertron@gmail.com" title="autor">GuerraTron</a> @2016</p>
+<h3>Herramientas</h3><p>Notepad ++  </p>
+<p>Creado con <a href="https://github.com/Nodeclipse/nodeclipse-1">Nodeclipse</a>
+ (<a href="http://marketplace.eclipse.org/content/nodeclipse">Eclipse Marketplace</a>, <a href="http://www.nodeclipse.org">site</a>) 
+Nodeclipse es un proyecto de código-abierto que se crece con sus contribuciones.</p>
+<h3>Autor:</h3><p> <cite>Espero que pueda serle de utilidad a alguien como lo ha sido para mí. En tal caso se agradecería email 
+comentando su uso o sugerencias para futuras mejoras.</cite> &nbsp; 
+     ¡ POR FAVOR, MANTENER CRÉDITOS Y ENLACES. GRACIAS !</p></article>
+    </section>
+
+
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Tutorials</h3><ul><li><a href="tutorial-examples_canvasShapes.es.html">Ejemplos canvasShapes</a></li><li><a href="tutorial-tuto_canvasShapes.es.html">Tutorial canvasShapes</a></li></ul><h3>Global</h3><ul><li><a href="global.html#autoProportion">autoProportion</a></li><li><a href="global.html#axes">axes</a></li><li><a href="global.html#axesFront">axesFront</a></li><li><a href="global.html#btnCanvasClean">btnCanvasClean</a></li><li><a href="global.html#btnCanvasFlag">btnCanvasFlag</a></li><li><a href="global.html#btnCanvasOptions">btnCanvasOptions</a></li><li><a href="global.html#btnCanvasRedraw">btnCanvasRedraw</a></li><li><a href="global.html#btnCanvasReset">btnCanvasReset</a></li><li><a href="global.html#btnCanvasZoom">btnCanvasZoom</a></li><li><a href="global.html#btnDownCanvasImage">btnDownCanvasImage</a></li><li><a href="global.html#canvas">canvas</a></li><li><a href="global.html#canvasDataButtons">canvasDataButtons</a></li><li><a href="global.html#canvasDataInfo">canvasDataInfo</a></li><li><a href="global.html#canvasDataIntro">canvasDataIntro</a></li><li><a href="global.html#canvasDataOptions">canvasDataOptions</a></li><li><a href="global.html#canvasDataTitle">canvasDataTitle</a></li><li><a href="global.html#canvasHeight">canvasHeight</a></li><li><a href="global.html#canvasShapes">canvasShapes</a></li><li><a href="global.html#canvasSquared">canvasSquared</a></li><li><a href="global.html#canvasWidth">canvasWidth</a></li><li><a href="global.html#cleanAllIfEmpty">cleanAllIfEmpty</a></li><li><a href="global.html#container">container</a></li><li><a href="global.html#coordinatesCentred">coordinatesCentred</a></li><li><a href="global.html#ctx">ctx</a></li><li><a href="global.html#decimals">decimals</a></li><li><a href="global.html#deformation">deformation</a></li><li><a href="global.html#drawPoints">drawPoints</a></li><li><a href="global.html#drawPolygons">drawPolygons</a></li><li><a href="global.html#drawSegments">drawSegments</a></li><li><a href="global.html#equalProportion">equalProportion</a></li><li><a href="global.html#fill">fill</a></li><li><a href="global.html#fractionGrid">fractionGrid</a></li><li><a href="global.html#freeDraw">freeDraw</a></li><li><a href="global.html#freeDrawColor">freeDrawColor</a></li><li><a href="global.html#freeDrawRounded">freeDrawRounded</a></li><li><a href="global.html#freeDrawSize">freeDrawSize</a></li><li><a href="global.html#gradient">gradient</a></li><li><a href="global.html#grid">grid</a></li><li><a href="global.html#gridFront">gridFront</a></li><li><a href="global.html#id">id</a></li><li><a href="global.html#invertX">invertX</a></li><li><a href="global.html#invertY">invertY</a></li><li><a href="global.html#language">language</a></li><li><a href="global.html#linkDownCanvasImage">linkDownCanvasImage</a></li><li><a href="global.html#mouseDrop">mouseDrop</a></li><li><a href="global.html#mouseInfo">mouseInfo</a></li><li><a href="global.html#mousePoints">mousePoints</a></li><li><a href="global.html#original">original</a></li><li><a href="global.html#pointsDrawChildren">pointsDrawChildren</a></li><li><a href="global.html#polyAreaFooter">polyAreaFooter</a></li><li><a href="global.html#polyAreaHeader">polyAreaHeader</a></li><li><a href="global.html#polygonsDrawChildren">polygonsDrawChildren</a></li><li><a href="global.html#proportionX">proportionX</a></li><li><a href="global.html#proportionY">proportionY</a></li><li><a href="global.html#segmentsDrawChildren">segmentsDrawChildren</a></li><li><a href="global.html#showBody">showBody</a></li><li><a href="global.html#showCredits">showCredits</a></li><li><a href="global.html#showNames">showNames</a></li><li><a href="global.html#showSubTitle">showSubTitle</a></li><li><a href="global.html#showTitle">showTitle</a></li><li><a href="global.html#showUIButtons">showUIButtons</a></li><li><a href="global.html#timestamp">timestamp</a></li><li><a href="global.html#zoomIn">zoomIn</a></li><li><a href="global.html#zoomOut">zoomOut</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Mon Mar 21 2016 20:53:52 GMT+0100 (Hora estándar romance)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
