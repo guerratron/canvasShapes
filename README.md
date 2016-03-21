@@ -1,5 +1,5 @@
 > -----------------------------------------------------------------------------------------------------
->   'canvasShapes' (namespace) - Library of creation, manipulation and calculation of plane geometric figures.  
+>   'canvasShapes' (namespace) - Library of creation, manipulation and calculation of flat geometric shapes.  
 >   Library: 'PolyArea'.  
 >   Author: Juan José Guerra Haba - dinertron@gmail.com - Marzo de 2016  
 >   License: Free BSD. & Open GPL v.3. Keep credit, please.  
