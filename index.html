@@ -1,45 +1,25 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en-us">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta charset="UTF-8">
     <title>Canvasshapes by guerratron</title>
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/github-dark.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="javascripts/main.js"></script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
   <body>
+    <section class="page-header">
+      <h1 class="project-name">Canvasshapes</h1>
+      <h2 class="project-tagline">Library of creation, manipulation and calculation of flat geometric shapes.</h2>
+      <a href="https://github.com/guerratron/canvasShapes" class="btn">View on GitHub</a>
+      <a href="https://github.com/guerratron/canvasShapes/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/guerratron/canvasShapes/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
 
-      <header>
-        <h1>Canvasshapes</h1>
-        <p>Library of creation, manipulation and calculation of flat geometric shapes.</p>
-      </header>
-
-      <div id="banner">
-        <span id="logo"></span>
-
-        <a href="https://github.com/guerratron/canvasShapes" class="button fork"><strong>View On GitHub</strong></a>
-        <div class="downloads">
-          <span>Downloads:</span>
-          <ul>
-            <li><a href="https://github.com/guerratron/canvasShapes/zipball/master" class="button">ZIP</a></li>
-            <li><a href="https://github.com/guerratron/canvasShapes/tarball/master" class="button">TAR</a></li>
-          </ul>
-        </div>
-      </div><!-- end banner -->
-
-    <div class="wrapper">
-      <nav>
-        <ul></ul>
-      </nav>
-      <section>
-        <blockquote>
+    <section class="main-content">
+      <blockquote>
 <hr>
 
 <p>'canvasShapes' (namespace) - Library of creation, manipulation and calculation of flat geometric shapes.<br>
@@ -50,20 +30,18 @@
   File: canvasShapes.js               Main Class: PolyArea.js  </p>
 
 <hr>
-</blockquote>
 
 <h1>
 <a id="canvasshapes" class="anchor" href="#canvasshapes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>canvasShapes</h1>
 
-<p>It is a library for drawing geometric figures associated events. </p>
+<p><a href="http://guerratron.github.io/canvasShapes" title="CanvasShapes page"><img src="canvasShapes-en/img/canvasShapes-logo.png" alt="canvasshapes logo" title="CanvasShapes GitHub page"></a>
+ It is a library for drawing geometric figures associated events.  </p>
+</blockquote>
 
-<p>It shows geometric calculations (areas, perimeters, ...) and supports a free drawn mode <em>"freehand"</em>; also it has a 
- graphical interface with buttons bar and an options window where display / modify some of the multiple parameters supported. </p>
+<p>It shows geometric calculations (areas, perimeters, ...) and supports a free drawn mode <em>"freehand"</em>; also it has a graphical interface with buttons bar and an options window where display / modify some of the multiple parameters supported.  </p>
 
-<p><em>'CANVAS-SHAPES'</em> is actually a namespace that hold the library <strong>'PolyArea'</strong> which is responsible for the bulk of drawn figures, 
- but also houses objects and methods useful in separate modules.<br>
- HTML element works on a <em>'canvas'</em> that constructs itself and on which it has implemented a reception event for the creation and 
- modified the figures (points, segments, ...)</p>
+<p><em>'CANVAS-SHAPES'</em> is actually a namespace that hold the library <strong>'PolyArea'</strong> which is responsible for the bulk of drawn figures, but also houses objects and methods useful in separate modules.<br>
+ HTML element works on a <em>'canvas'</em> that constructs itself and on which it has implemented a reception event for the creation and modified the figures (points, segments, ...)</p>
 
 <h2>
 <a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
@@ -73,8 +51,7 @@
 <pre><code>canvasShapes.render( {id: "idElement"} );
 </code></pre>
 
-<p>where the string <em>'idElement'</em> is expected that identifies the container element, that is, the element
-in which all imbibing <em>UI</em>.<br>
+<p>where the string <em>'idElement'</em> is expected that identifies the container element, that is, the element in which all imbibing <em>UI</em>.<br>
 From here everything is done visually and interactively in the <strong>GUI</strong>.</p>
 
 <h2>
@@ -104,23 +81,22 @@ they are not objects, but the library does implement recognizing the figures dra
 
 <p>Notepad ++  </p>
 
-<p>Created with <a href="https://github.com/Nodeclipse/nodeclipse-1">Nodeclipse</a>
- (<a href="http://marketplace.eclipse.org/content/nodeclipse">Eclipse Marketplace</a>, <a href="http://www.nodeclipse.org">site</a>) 
-Nodeclipse is free open-source project that grows with your contributions.</p>
+<p>Created with <a href="https://github.com/Nodeclipse/nodeclipse-1">Nodeclipse</a> (<a href="http://marketplace.eclipse.org/content/nodeclipse">Eclipse Marketplace</a>, <a href="http://www.nodeclipse.org">site</a>) Nodeclipse is free open-source project that grows with your contributions.</p>
 
 <h3>
 <a id="author" class="anchor" href="#author" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Author:</h3>
 
-<p>I hope it can be useful to someone as it has been for me. In this case it would be appreciated email commenting 
- use or suggestions for future improvements.  <br>
+<p>I hope it can be useful to someone as it has been for me. In this case it would be appreciated email commenting use or suggestions for future improvements.  <br>
      ¡ KEEP CREDITS, PLEASE !</p>
-      </section>
-      <footer>
-        <p>Project maintained by <a href="https://github.com/guerratron">guerratron</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></small></p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/guerratron/canvasShapes">Canvasshapes</a> is maintained by <a href="https://github.com/guerratron">guerratron</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
       </footer>
-    </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-    
+
+    </section>
+
+  
   </body>
 </html>
