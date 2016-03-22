@@ -41,8 +41,7 @@ Developed by [GuerraTron](mailto://dinertron@gmail.com "author") @2016
 ### Tools
 Notepad ++  
 
-Created with [Nodeclipse](https://github.com/Nodeclipse/nodeclipse-1)  
- ([Eclipse Marketplace](http://marketplace.eclipse.org/content/nodeclipse), [site](http://www.nodeclipse.org)) Nodeclipse is free open-source project that grows with your contributions.
+Created with [Nodeclipse](https://github.com/Nodeclipse/nodeclipse-1) ([Eclipse Marketplace](http://marketplace.eclipse.org/content/nodeclipse), [site](http://www.nodeclipse.org)) Nodeclipse is free open-source project that grows with your contributions.
 
 ### Author: 
  <cite>I hope it can be useful to someone as it has been for me. In this case it would be appreciated email commenting use or suggestions for future improvements.</cite> &nbsp;  
