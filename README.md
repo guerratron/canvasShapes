@@ -8,7 +8,7 @@
 >   
 > ----------------------------------------------------------------------------------------------------
 # canvasShapes
-[![canvasshapes logo](img/canvasShapes-logo.png "CanvasShapes GitHub page")](http://guerratron.github.io/canvasShapes "CanvasShapes page")
+[![canvasshapes logo](img/canvasShapes_logo.png "CanvasShapes GitHub page")](http://guerratron.github.io/canvasShapes "CanvasShapes page")
  It is a library for drawing geometric figures associated events.  
  
  It shows geometric calculations (areas, perimeters, ...) and supports a free drawn mode *"freehand"*; also it has a graphical interface with buttons bar and an options window where display / modify some of the multiple parameters supported.  
