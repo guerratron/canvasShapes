@@ -8,6 +8,7 @@ body{text-align:justify; /*font-family:calibri,"courier","serif"; font-size:120%
 header{max-width:85%; margin:auto; background:navajoWhite; color:#333333; border-radius:8px; box-shadow:2px 2px 4px darkGray; padding:15px; margin-top:40px;
     font-family: sans-serif;
     text-shadow: 0 1px 0 #fff;
+		text-align: left;
 }
 header span{float:left; font-size:xx-large; font-weight:bolder; color:blue;}
 header sub{float:left; color:maroon; margin:6px;}
