@@ -17,9 +17,14 @@
  HTML element works on a *'canvas'* that constructs itself and on which it has implemented a reception event for the creation and modified the figures (points, segments, ...)
 
 ## Usage
-After loading the file in the *'head'* zone (`<script src = "... / canvasShapes.js" ...> </ script>`) you can start to use the library under the namespace: *'canvasShapes'*. It could commence for example, with the viewing of the UI by the method:
-
+After loading the file in the *'head'* zone 
+````HTML
+<script src = "... / canvasShapes.js" ...> </ script>
+````
+you can start to use the library under the namespace: *'canvasShapes'*. It could commence for example, with the viewing of the UI by the method:
+````javascript
     canvasShapes.render( {id: "idElement"} );
+````
  
 where the string *'idElement'* is expected that identifies the container element, that is, the element in which all imbibing *UI*.  
 From here everything is done visually and interactively in the **GUI**.
